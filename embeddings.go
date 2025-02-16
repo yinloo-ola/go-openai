@@ -155,11 +155,11 @@ const (
 type EmbeddingRequest struct {
 	Input          any                     `json:"input"`
 	Model          EmbeddingModel          `json:"model"`
-	User           string                  `json:"user,omitempty"`
-	EncodingFormat EmbeddingEncodingFormat `json:"encoding_format,omitempty"`
+	User           string                  `json:"user,omitzero"`
+	EncodingFormat EmbeddingEncodingFormat `json:"encoding_format,omitzero"`
 	// Dimensions The number of dimensions the resulting output embeddings should have.
 	// Only supported in text-embedding-3 and later models.
-	Dimensions int `json:"dimensions,omitempty"`
+	Dimensions int `json:"dimensions,omitzero"`
 }
 
 func (r EmbeddingRequest) Convert() EmbeddingRequest {
@@ -183,10 +183,10 @@ type EmbeddingRequestStrings struct {
 	// EmbeddingEncodingFormat is the format of the embeddings data.
 	// Currently, only "float" and "base64" are supported, however, "base64" is not officially documented.
 	// If not specified OpenAI will use "float".
-	EncodingFormat EmbeddingEncodingFormat `json:"encoding_format,omitempty"`
+	EncodingFormat EmbeddingEncodingFormat `json:"encoding_format,omitzero"`
 	// Dimensions The number of dimensions the resulting output embeddings should have.
 	// Only supported in text-embedding-3 and later models.
-	Dimensions int `json:"dimensions,omitempty"`
+	Dimensions int `json:"dimensions,omitzero"`
 }
 
 func (r EmbeddingRequestStrings) Convert() EmbeddingRequest {
@@ -215,10 +215,10 @@ type EmbeddingRequestTokens struct {
 	// EmbeddingEncodingFormat is the format of the embeddings data.
 	// Currently, only "float" and "base64" are supported, however, "base64" is not officially documented.
 	// If not specified OpenAI will use "float".
-	EncodingFormat EmbeddingEncodingFormat `json:"encoding_format,omitempty"`
+	EncodingFormat EmbeddingEncodingFormat `json:"encoding_format,omitzero"`
 	// Dimensions The number of dimensions the resulting output embeddings should have.
 	// Only supported in text-embedding-3 and later models.
-	Dimensions int `json:"dimensions,omitempty"`
+	Dimensions int `json:"dimensions,omitzero"`
 }
 
 func (r EmbeddingRequestTokens) Convert() EmbeddingRequest {
